@@ -5,3 +5,7 @@ and also https://www.mongodb.com/blog/post/running-mongodb-queries-concurrently-
 Use a valid project structure, check https://golang.org/doc/code.html for details
 
 E. g. `[some folder]/src/github.com/juanmougan/estate` where `estate` is this project's root path
+
+Run the project like this:
+
+    $ go run *.go
