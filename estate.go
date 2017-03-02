@@ -11,10 +11,10 @@ import (
 )
 
 type Estate struct {
-    Name		string
-    Lat 		float64
-    Long 		float64
-    Created 	time.Time
+    Name		string		`json:"name"`
+    Lat 		float64		`json:"lat"`
+    Long 		float64		`json:"long"`
+    Created 	time.Time	`json:"created"`
 }
 
 type Estates []Estate
