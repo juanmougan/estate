@@ -4,9 +4,19 @@ import (
     "fmt"
     "log"
     "net/http"
+    "time"
 
     "github.com/gorilla/mux"
 )
+
+type Estate struct {
+    Name		string
+    Lat 		float64
+    Long 		float64
+    Created 	time.Time
+}
+
+type Estates []Estate
 
 func main() {
 
