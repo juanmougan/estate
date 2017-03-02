@@ -5,6 +5,7 @@ import (
     "log"
     "net/http"
     "time"
+	"encoding/json"
 
     "github.com/gorilla/mux"
 )
@@ -33,7 +34,12 @@ func Index(w http.ResponseWriter, r *http.Request) {
 }
 
 func EstateIndex(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintln(w, "Estate Index!")
+    estates := Estates {
+        Estate { Name: "Departamento en Palermo", Lat: -34.594142, Long: -58.422036 },
+        Estate { Name: "Casa en San Isidro", Lat: -34.467610, Long: -58.510191 },
+    }
+
+    json.NewEncoder(w).Encode(estates)
 }
 
 func EstateShow(w http.ResponseWriter, r *http.Request) {
