@@ -30,7 +30,7 @@ func RepoCreateEstate(e Estate) Estate {
 }
 
 func RepoDestroyEstate(id int) error {
-    for i, e := range Estates {
+    for i, e := range estates {
         if e.Id == id {
             estates = append(estates[:i], estates[i+1:]...)
             return nil

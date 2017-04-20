@@ -30,4 +30,10 @@ var routes = Routes {
         "/estates/{estateId}",
         EstateShow,
     },
+    Route {
+        "EstateCreate",
+        "POST",
+        "/estates",
+        EstateCreate,
+    },
 }
