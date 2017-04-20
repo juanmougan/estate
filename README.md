@@ -31,6 +31,20 @@ Should get back something like this:
       }
     ]
 
+And if you want to add a new Estate:
+
+    curl -H "Content-Type: application/json" -d '{"name":"Casa de Maria", "Lat": -34.566610, "Long": -58.411191}' http://localhost:8080/estates | jq .
+
+You would get something like this:
+
+    {
+      "id": 4,
+      "name": "Casa de Maria",
+      "lat": -34.56661,
+      "long": -58.411191,
+      "created": "0001-01-01T00:00:00Z"
+    }
+
 Steps missing
 
 1. Add missing endpoint
