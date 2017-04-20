@@ -51,4 +51,48 @@ Steps missing
 
 2. Add MongoDB support
 
+Some data about setting up Mongo: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
+
+Start service: `brew services start mongodb`
+
+From now, data from Mykong: https://www.mkyong.com/mongodb/how-to-create-database-or-collection-in-mongodb/
+Run `show dbs` from console
+Currently, only two databases are available – “admin” and “local“.
+
+Run `use <new-db>` but MangoDB doesn’t create any database yet, until you save something inside.
+E.g. `use places`
+
+Define a collection named “users“, and save a dummy document(value) inside.
+
+> db.users.save( {username:"mkyong"} )
+> db.users.find()
+{ "_id" : ObjectId("4dbac7bfea37068bd0987573"), "username" : "mkyong" }
+>
+> show dbs
+admin   0.03125GB
+local   (empty)
+mkyongdb        0.03125GB
+
+Mapping chart: https://docs.mongodb.com/manual/reference/sql-comparison/
+
+My example:
+
+> show dbs
+admin  0.000GB
+local  0.000GB
+> use places
+switched to db places
+> show dbs
+admin  0.000GB
+local  0.000GB
+>
+db.estates.save( {id:1, name: "Departamento en Colegiales", lat: -34.575831, long: -58.448499} )
+db.estates.save( {id:2, name: "Departamento en Coghlan", lat: -34.562559, long: -58.474026} )
+
+With no args, find() retrieves all documents
+db.estates.find()
+
+This retrieves id = 2
+db.estates.find( { id: 2 } )
+
 3. Eventually... DB cache?
